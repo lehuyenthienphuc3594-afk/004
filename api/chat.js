@@ -22,15 +22,13 @@ export default async function handler(req, res) {
       }),
     });
 
+    const data = await response.json();
+
     if (!response.ok) {
-      const err = await response.text();
-      console.error("OpenAI API error:", err);
-      return res.status(500).json({ error: "OpenAI API call failed", details: err });
+      return res.status(500).json({ error: data });
     }
 
-    const data = await response.json();
-    const reply = data.choices?.[0]?.message?.content || "(No reply from AI)";
-
+    const reply = data.choices?.[0]?.message?.content || "(No reply)";
     return res.status(200).json({ reply });
   } catch (error) {
     console.error("Server error:", error);

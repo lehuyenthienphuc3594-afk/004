@@ -10,7 +10,7 @@ const app = new PIXI.Application({
 
 let live2dModel = null;
 
-PIXI.live2d.Live2DModel.from("March7th/March7th.model3.json").then(model => {
+PIXI.live2d.Live2DModel.from("March7/March7.model3.json").then(model => {
   model.scale.set(0.3);
   model.x = 100;
   model.y = 400;

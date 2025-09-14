@@ -24,7 +24,7 @@ async function ask() {
   chatBox.innerHTML += "<b>You:</b> " + q + "<br>";
 
   try {
-    const response = await fetch("https://im-snowy.vercel.app/api/chat", {
+    const response = await fetch("https://forth-li5bllfhi-zeros-projects-cd1db75f.vercel.app", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: q })
